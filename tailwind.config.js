@@ -1,11 +1,13 @@
+import flowbitePlugin from 'flowbite/plugin';
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', 'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     screens: {
       sm: '375px',
       md: '768px',
-      lg: '1440px'
+      lg: '1440px',
     },
     colors: {
       black: '#050505',
@@ -22,8 +24,8 @@ export default {
     fontFamily: {
       sans: '',
       serif: '',
-      mono: ''
-    }
+      mono: '',
+    },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
