@@ -1,9 +1,11 @@
-import { useState, useContext, createContext } from "react";
+import { useState, createContext } from "react";
 
 
 const ThemeContext = createContext({
     theme: '',
-    font: ''
+    font: '', 
+    changeTheme: () => {},
+    changeFont: () => {},
 })
 
 export function ThemeContextProvider({children}) {
@@ -14,12 +16,12 @@ export function ThemeContextProvider({children}) {
         setDarkTheme(theme => theme === 'dark' ? 'light' : 'dark')
     }
 
-    const setTheme = (fontValue) => {
+    const pickFont = (fontValue) => {
         switch(fontValue) {
             case 'sans serif':
                 setFontTheme('sans serif')
                 break;
-            case 'sserif':
+            case 'serif':
                 setFontTheme('serif')
                 break;
             case 'mono':
@@ -32,7 +34,10 @@ export function ThemeContextProvider({children}) {
 
     const themeContextValue = {
         theme: darkTheme,
-        font: fontTheme
+        font: fontTheme,
+        changeTheme: toggleTheme,
+        changeFont: pickFont
+        
     };
 
     return(

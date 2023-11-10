@@ -4,7 +4,7 @@ import { ThemeContextProvider } from './theme';
 const App = () => {
   return (
     <ThemeContextProvider>
-      <div className="container p-6">
+      <div className=" p-6">
         <Header />
       </div>
     </ThemeContextProvider>

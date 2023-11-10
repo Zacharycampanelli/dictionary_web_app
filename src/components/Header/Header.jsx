@@ -1,12 +1,27 @@
-import Logo from '../../assets/images/svg/Logo'
-import FontPicker from '../FontPicker/FontPicker'
+// import { ToggleSwitch } from 'flowbite-react'
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch';
+import Logo from '../../assets/images/svg/Logo';
+import FontPicker from '../FontPicker/FontPicker';
+// import { useContext } from 'react';
+// import ThemeContext from '../../theme';
 const Header = () => {
-  return (
-    <div className="flex">
-      <Logo />
-        <FontPicker />
-    </div>
-  )
-}
+  // const themeCtx = useContext(ThemeContext);
 
-export default Header
+  return (
+    <div className="flex justify-between w-full m-0">
+      <div className="logo_container">
+      <Logo />
+
+      </div>
+    <div className="options_container flex justify-around w-2/3">
+      
+      <FontPicker />
+      <hr className='w-px h-8 bg-lightGray'/>
+
+      <ToggleSwitch />
+    </div>
+    </div>
+  );
+};
+
+export default Header;
