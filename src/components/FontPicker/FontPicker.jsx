@@ -1,10 +1,11 @@
 'use client';
 
-import { Button, Dropdown } from 'flowbite-react';
 import { useContext } from 'react';
+import { Button, Dropdown } from 'flowbite-react';
 import ThemeContext from '../../theme';
-import { capitalize } from '../../utils/capitalize';
 import IconArrowDown from '../../assets/images/svg/IconArrowDown';
+import { capitalize } from '../../utils/capitalize';
+
 const FontPicker = () => {
   const themeCtx = useContext(ThemeContext);
 

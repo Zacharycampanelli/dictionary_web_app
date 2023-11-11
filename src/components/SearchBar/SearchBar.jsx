@@ -1,11 +1,9 @@
-import { Button, TextInput } from "flowbite-react"
-import SvgIconSearch from '../../assets/images/svg/IconSearch'
 import { useContext, useState } from "react"
+import { Button, TextInput } from "flowbite-react"
 import ThemeContext from "../../theme"
-// const customInputTheme = {
-//     addon: 'rounded-2xl'
+import SvgIconSearch from '../../assets/images/svg/IconSearch'
+
     
-// }
 
 
 const SearchBar = () => {

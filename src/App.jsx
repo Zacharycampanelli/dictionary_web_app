@@ -1,4 +1,4 @@
-import DisplayWord from './components/DisplayWord/DisplayWord';
+import DefinitionContainer from './components/DefinitionContainer/DefinitionContainer';
 import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
 import { ThemeContextProvider } from './theme';
@@ -10,7 +10,7 @@ const App = () => {
       <div className=" p-6">
         <Header />
         <SearchBar />
-        <DisplayWord />
+        <DefinitionContainer />
       </div>
     </ThemeContextProvider>
   );
