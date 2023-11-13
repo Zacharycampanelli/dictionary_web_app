@@ -22,9 +22,9 @@ export default {
       red: '#FF5252',
     },
     fontFamily: {
-      sans: '',
-      serif: '',
-      mono: '',
+      sans: 'Inter',
+      serif: 'Lora',
+      mono: 'Inconsolata',
     },
   },
   plugins: [require('flowbite/plugin')],

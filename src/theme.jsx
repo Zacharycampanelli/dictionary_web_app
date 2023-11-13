@@ -22,7 +22,7 @@ export function ThemeContextProvider({children}) {
     const pickFont = (fontValue) => {
         switch(fontValue) {
             case 'sans serif':
-                setFontTheme('sans serif')
+                setFontTheme('sans')
                 break;
             case 'serif':
                 setFontTheme('serif')
@@ -31,7 +31,7 @@ export function ThemeContextProvider({children}) {
                 setFontTheme('mono')
                 break;
             default:
-                setFontTheme('sans serif')
+                setFontTheme('sans')
         }
     }
 
