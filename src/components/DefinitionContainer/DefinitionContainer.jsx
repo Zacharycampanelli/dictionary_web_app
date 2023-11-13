@@ -3,6 +3,7 @@ import ThemeContext from '../../theme';
 import DisplayWord from '../DisplayWord/DisplayWord';
 import SvgIconPlay from '../../assets/images/svg/IconPlay';
 import Meaning from '../Meaning/Meaning';
+import Source from '../Source/Source';
 
 const DefinitionContainer = () => {
   const themeCtx = useContext(ThemeContext);
@@ -20,6 +21,7 @@ const DefinitionContainer = () => {
   //   Api call for word
   useEffect(() => {
     if (themeCtx.searchedWord) {
+     
       fetch(`${url}${themeCtx.searchedWord}`)
         .then((response) => {
           if (response.ok) {
@@ -76,6 +78,8 @@ const DefinitionContainer = () => {
       </button>
     </div>
     {meanings.map((meaning, i) => <Meaning meaning={meaning} key={i}/>)}
+    <div className="border-b border-lightGray border-solid w-full mt-8"></div>
+    {themeCtx.searchedWord && <Source word = {themeCtx.searchedWord}/>}
     </>
   );
 };
