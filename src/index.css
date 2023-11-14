@@ -21,3 +21,16 @@
     font-family: 'LoraItalic';
     src: url('./assets/fonts/lora/Lora-Italic-VariableFont_wght.ttf');
 }
+
+/* Utility font classes since Tailwind's wont apply  */
+.font-mono {
+    font-family: 'Inconsolata';
+}
+
+.font-sans {
+    font-family: 'Inter';
+}
+
+.font-serif {
+    font-family: 'Lora';
+}

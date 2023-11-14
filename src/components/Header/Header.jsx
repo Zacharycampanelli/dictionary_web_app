@@ -10,16 +10,14 @@ const Header = () => {
   return (
     <div className="flex justify-between w-full m-0">
       <div className="logo_container">
-      <Logo />
-
+        <Logo />
       </div>
-    <div className="options_container flex justify-around w-2/3">
-      
-      <FontPicker />
-      <hr className='w-px h-8 bg-lightGray'/>
+      <div className="options_container flex justify-around w-2/3">
+        <FontPicker />
+        <hr className="w-px h-8 bg-lightGray" />
 
-      <ToggleSwitch />
-    </div>
+        <ToggleSwitch />
+      </div>
     </div>
   );
 };

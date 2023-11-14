@@ -5,7 +5,7 @@ const DisplayWord = ({phonetic}) => {
  const themeCtx = useContext(ThemeContext);
   return (
     <div>
-        <h1 className='mt-6 mb-1 text-[32px] font-bold'>
+        <h1 className='mt-6 mb-1 text-[32px] text-blackGray font-bold dark:text-white'>
      { themeCtx.searchedWord}
       </h1>
       <p className='text-[18px] text-lightPurple'>

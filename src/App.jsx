@@ -8,18 +8,29 @@ import ThemeContext from './theme';
 const App = () => {
   const themeCtx = useContext(ThemeContext)
   const [renderedFont, setRenderedFont] = useState(themeCtx.font)
-
+  const [colorMode, setColorMode] = useState(themeCtx.theme)
   // Sets the font state to be used for the entire application
   useEffect(() => {
     setRenderedFont(themeCtx.font)
   }, [themeCtx.font])
+
   
+  useEffect(() => {
+    setColorMode(themeCtx.theme)
+  }, [themeCtx.theme])
+  
+
+
   return (
-      <div className={`font-${renderedFont} p-6`}>
+  <div className={`${colorMode}`}>
+      <div className={`font-${themeCtx.font}`}>
+      <div className=' bg-white dark:bg-darkerBlack p-6 h-screen'>
         <Header />
+        
         <SearchBar />
         <DefinitionContainer />
       </div>
+      </div></div>
   );
 };
 

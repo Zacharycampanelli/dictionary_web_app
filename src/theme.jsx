@@ -12,7 +12,7 @@ const ThemeContext = createContext({
 
 export function ThemeContextProvider({children}) {
     const [darkTheme, setDarkTheme] = useState('light');
-    const [fontTheme, setFontTheme] = useState('sans serif')
+    const [fontTheme, setFontTheme] = useState('mono')
     const [word, setWord] = useState('');
 
     const toggleTheme = () => {

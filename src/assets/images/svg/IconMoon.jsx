@@ -3,7 +3,7 @@ const SvgIconMoon = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={22} height={22} {...props}>
     <path
       fill="none"
-      stroke="#838383"
+      stroke={props.color}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}

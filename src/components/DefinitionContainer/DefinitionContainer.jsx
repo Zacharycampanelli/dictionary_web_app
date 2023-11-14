@@ -78,7 +78,7 @@ const DefinitionContainer = () => {
       </button>
     </div>
     {meanings.map((meaning, i) => <Meaning meaning={meaning} key={i}/>)}
-    <div className="border-b border-lightGray border-solid w-full mt-8"></div>
+    <div className="border-b border-lightGray border-solid w-full mt-8 dark:border-darkGray"></div>
     {themeCtx.searchedWord && <Source word = {themeCtx.searchedWord}/>}
     </>
   );

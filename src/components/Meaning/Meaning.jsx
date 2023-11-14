@@ -33,13 +33,13 @@ const Meaning = ({ meaning }) => {
   // console.log(partOfSpeech, definitions, synonyms);
   return (
     <div className="flex flex-col mt-7">
-      <h2 className="text-left text-lg mb-8 marker:font-bold italic w-full leading-[0.1em] mt-2.5 mb-5 border-b border-lightGray border-solid">
-        <span className="pr-6 bg-white ">{partOfSpeech}</span>
+      <h2 className="text-left text-lg mb-8 marker:font-bold italic w-full leading-[0.1em] mt-2.5 mb-5 border-b border-lightGray border-solid dark:border-darkGray">
+        <span className="pr-6 bg-white text-blackGray dark:text-white dark:bg-darkerBlack">{partOfSpeech}</span>
       </h2>
       <p className="text-base text-mediumGray mb-3">Meaning</p>
       <ul className="list-disc marker:text-lightPurple list-outside before: ml-4">
         {definitions.map((definition, i) => (
-          <li key={i} className="w-5/6 mt-3 last:mb-4 leading-6 text-[15px] text-blackGray">
+          <li key={i} className="w-5/6 mt-3 last:mb-4 leading-6 text-[15px] text-blackGray dark:text-white">
             {definition}
           </li>
         ))}
