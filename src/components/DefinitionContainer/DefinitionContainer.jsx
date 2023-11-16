@@ -65,7 +65,7 @@ const DefinitionContainer = () => {
   return ''
 
   return (<>
-    <div className="flex justify-between items-center ">
+    <div className="flex justify-between items-center  ">
       <DisplayWord phonetic={phonetic} />
       <PlayButton audio={audio} disabledButton={disabledButton}/>
     </div>

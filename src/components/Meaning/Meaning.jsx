@@ -28,13 +28,13 @@ const Meaning = ({ meaning }) => {
       <p className="text-base text-mediumGray mb-3 md:text-xl">Meaning</p>
       <ul className="list-disc marker:text-lightPurple list-outside before: ml-4">
         {definitions.map((definition, i) => (
-          <li key={i} className="w-5/6 mt-3 last:mb-4 leading-6 text-[15px] text-blackGray md:text-[18px] md:mb-4  dark:text-white">
+          <li key={i} className="w-5/6 mt-3 last:mb-6 leading-6 text-[15px] text-blackGray md:text-[18px] md:last:mb-10 lg:last:mb-16 dark:text-white">
             {definition}
           </li>
         ))}
       </ul>
       {example && example.length > 0 && (
-        <p className="text-[15px] text-mediumGray before: ml-4 mb-3 md:text-[18px]">&quot;{example}&quot;</p>
+        <p className="text-[15px] text-mediumGray before:ml-4 mb-3 md:text-[18px]">&quot;{example}&quot;</p>
       )}
       {synonyms.length > 0 && (
         <p className="text-base text-mediumGray md:text-xl ">

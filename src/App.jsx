@@ -24,11 +24,14 @@ const App = () => {
   return (
   <div className={`${colorMode}`}>
       <div className={`font-${themeCtx.font}`}>
-      <div className=' bg-white dark:bg-darkerBlack p-6 h-screen'>
+      <div className=' bg-white dark:bg-darkerBlack p-6 h-screen md:p-10 h-max'>
+        <div className="lg:w-7/12 lg:m-auto">
+
         <Header />
         
         <SearchBar />
         <DefinitionContainer />
+        </div>
       </div>
       </div></div>
   );
