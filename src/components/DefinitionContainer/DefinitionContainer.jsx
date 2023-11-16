@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import ThemeContext from '../../theme';
 import DisplayWord from '../DisplayWord/DisplayWord';
-import SvgIconPlay from '../../assets/images/svg/IconPlay';
 import Meaning from '../Meaning/Meaning';
 import Source from '../Source/Source';
+import PlayButton from '../PlayButton/PlayButton';
 
 const DefinitionContainer = () => {
   const themeCtx = useContext(ThemeContext);
@@ -61,21 +61,13 @@ const DefinitionContainer = () => {
     }
   };
 
-  const playAudio = () => {
-    const audioToPlay = new Audio(audio);
-    audioToPlay.play();
-  };
+  if(themeCtx.searchedWord === '')
+  return ''
 
   return (<>
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center ">
       <DisplayWord phonetic={phonetic} />
-      <button className="mt-8" disabled={disabledButton} onClick={playAudio}>
-        {disabledButton === false ? (
-          <SvgIconPlay width="48px" height="48px" color="#A445ED" />
-        ) : (
-          <SvgIconPlay width="48px" height="48px" color="#3A3A3A" />
-        )}
-      </button>
+      <PlayButton audio={audio} disabledButton={disabledButton}/>
     </div>
     {meanings.map((meaning, i) => <Meaning meaning={meaning} key={i}/>)}
     <div className="border-b border-lightGray border-solid w-full mt-8 dark:border-darkGray"></div>

@@ -9,7 +9,7 @@ const SearchBar = () => {
   return (
     <div className="relative mt-6">
       <div>
-        <SvgIconSearch className="absolute top-3 right-4"/>
+        <SvgIconSearch className="absolute top-4 right-4"/>
         <Button className="absolute right-0 inset-y-0" onClick={() => themeCtx.changeSearchedWord(typedWord)}></Button>
       </div>
       <input
@@ -17,7 +17,7 @@ const SearchBar = () => {
         id="default-input"
         onKeyDown={(e) => (e.key === 'Enter' ? themeCtx.changeSearchedWord(typedWord) : '')}
         onChange={(e) => setTypedWord(e.target.value)}
-        className="bg-lightestGray border-none text-blackGray text-base rounded-2xl block w-full p-2.5 dark:bg-lighterBlack  dark:text-white"
+        className="bg-lightestGray border-none text-blackGray text-base rounded-2xl block w-full p-3.5 dark:bg-lighterBlack  dark:text-white"
       />{' '}
     </div>
   );
