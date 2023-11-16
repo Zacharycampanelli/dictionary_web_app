@@ -28,7 +28,7 @@ const FontPicker = () => {
         label="Font Picker"
         dismissOnClick={false}
         renderTrigger={() => (
-          <button className="flex justify-between items-center text-sm dark:text-white">
+          <button className="flex justify-between items-center text-sm font-bold dark:text-white md:text-[18px]">
             {displayChosenFont()}
             <IconArrowDown className="ml-4" />
           </button>
