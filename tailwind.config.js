@@ -19,7 +19,7 @@ export default {
       lightestGray: '#F4F4F4',
       white: '#FFFFFF',
       lightPurple: '#A445ED',
-      red: '#FF5252',
+      brightRed: '#FF5252',
     },
     fontFamily: {
       sans: ['Inter'],

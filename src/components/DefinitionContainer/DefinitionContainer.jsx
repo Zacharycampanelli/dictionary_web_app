@@ -4,13 +4,15 @@ import DisplayWord from '../DisplayWord/DisplayWord';
 import Meaning from '../Meaning/Meaning';
 import Source from '../Source/Source';
 import PlayButton from '../PlayButton/PlayButton';
+import NotFound from '../NotFound/NotFound';
 
-const DefinitionContainer = () => {
+const DefinitionContainer = ({emptySearch}) => {
   const themeCtx = useContext(ThemeContext);
   const [phonetic, setPhonetic] = useState('');
   const [audio, setAudio] = useState('');
   const [disabledButton, setDisabledButton] = useState(false);
   const [meanings, setMeanings] = useState([]);
+  const [notFound, setNotFound] = useState(false)
   const url = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
   //   Disables play button if there is no audio file
@@ -21,19 +23,19 @@ const DefinitionContainer = () => {
   //   Api call for word
   useEffect(() => {
     if (themeCtx.searchedWord) {
-     
       fetch(`${url}${themeCtx.searchedWord}`)
         .then((response) => {
           if (response.ok) {
+            setNotFound(false)
             return response.json();
           }
           themeCtx.changeSearchedWord('');
           setPhonetic('');
           setAudio('');
+          setNotFound(true);
           throw response;
         })
         .then((data) => {
-            
           setPhonetic(data[0].phonetic);
           addAudioFile(data[0]);
           let apiMeanings = data[0].meanings;
@@ -44,7 +46,7 @@ const DefinitionContainer = () => {
         })
         .finally(() => {console.log(meanings)});
     }
-  }, [themeCtx.searchedWord]);
+  }, [themeCtx.searchedWord, setNotFound]);
 
   const addAudioFile = (data) => {
     let i = 0;
@@ -60,9 +62,12 @@ const DefinitionContainer = () => {
       console.error(err);
     }
   };
-
-  if(themeCtx.searchedWord === '')
+  
+  if(emptySearch)
   return ''
+
+if(notFound === true)
+return <NotFound />
 
   return (<>
     <div className="flex justify-between items-center  ">
