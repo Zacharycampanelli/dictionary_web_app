@@ -39,7 +39,9 @@ const Meaning = ({ meaning }) => {
       {synonyms.length > 0 && (
         <p className="text-base text-mediumGray md:text-xl ">
           Synonyms
-          <span className="text-lightPurple font-bold ml-6">{totalSynonyms.join(`,\r`)} </span>
+          {totalSynonyms.map((synonym, i) => 
+            <p className="inline cursor-pointer" key={i}><span className="text-lightPurple font-bold first:ml-6  hover:underline">{`${synonym}`}</span> </p>
+          )}
         </p>
       )}
     </div>

@@ -1,6 +1,6 @@
 import DefinitionContainer from './components/DefinitionContainer/DefinitionContainer';
 import Header from './components/Header/Header';
-import SearchBar from './components/PlayButton/SearchBar/SearchBar';
+import SearchBar from './components/SearchBar/SearchBar';
 import { useContext, useEffect, useState } from 'react';
 import ThemeContext from './theme';
 

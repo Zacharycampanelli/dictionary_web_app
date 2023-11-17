@@ -12,7 +12,7 @@ const Header = () => {
     isSmallDevice ? setLogoDimensions({width: 34, height: 38}) : setLogoDimensions({width: 38, height: 42})
   }, [isSmallDevice])
   return (
-    <div className="flex justify-between w-full m-0 md:pt-8 mb-12">
+    <div className="flex justify-between w-full m-0 md:pt-2 mb-12">
       <div className="logo_container">
         <Logo width={logoDimensions.width} height={logoDimensions.height}/>
       </div>

@@ -20,6 +20,14 @@ const DefinitionContainer = ({emptySearch}) => {
     audio ? setDisabledButton(false) : setDisabledButton(true);
   }, [audio]);
 
+  const resetState = () => {
+    themeCtx.changeSearchedWord('');
+    themeCtx.changeReturnedWord('');
+    setPhonetic('');
+    setAudio('');
+    setNotFound(true);
+  }
+
   //   Api call for word
   useEffect(() => {
     if (themeCtx.searchedWord) {
@@ -27,12 +35,10 @@ const DefinitionContainer = ({emptySearch}) => {
         .then((response) => {
           if (response.ok) {
             setNotFound(false)
+            themeCtx.changeReturnedWord(themeCtx.searchedWord)
             return response.json();
           }
-          themeCtx.changeSearchedWord('');
-          setPhonetic('');
-          setAudio('');
-          setNotFound(true);
+          resetState()
           throw response;
         })
         .then((data) => {
@@ -72,7 +78,8 @@ return <NotFound />
   return (<>
     <div className="flex justify-between items-center  ">
       <DisplayWord phonetic={phonetic} />
-      <PlayButton audio={audio} disabledButton={disabledButton}/>
+      {themeCtx.returnedWord &&
+      <PlayButton audio={audio} disabledButton={disabledButton}/>}
     </div>
     {meanings.map((meaning, i) => <Meaning meaning={meaning} key={i}/>)}
     <div className="border-b border-lightGray border-solid w-full mt-8 dark:border-darkGray"></div>

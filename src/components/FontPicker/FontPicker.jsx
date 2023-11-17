@@ -34,9 +34,9 @@ const FontPicker = () => {
           </button>
         )}
       >
-        <Dropdown.Item onClick={() => chooseFont('sans serif')}>Sans Serif</Dropdown.Item>
-        <Dropdown.Item onClick={() => chooseFont('serif')}>Serif</Dropdown.Item>
-        <Dropdown.Item onClick={() => chooseFont('mono')}>Mono</Dropdown.Item>
+        <Dropdown.Item className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent" onClick={() => chooseFont('sans serif')}>Sans Serif</Dropdown.Item>
+        <Dropdown.Item className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent" onClick={() => chooseFont('serif')}>Serif</Dropdown.Item>
+        <Dropdown.Item className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent" onClick={() => chooseFont('mono')}>Mono</Dropdown.Item>
       </Dropdown>
     </>
   );

@@ -5,15 +5,18 @@ const ThemeContext = createContext({
     theme: '',
     font: '', 
     searchedWord: '',
+    returnedWord: '',
     changeTheme: () => {},
     changeFont: () => {},
-    changeSearchedWord: () => {}
+    changeSearchedWord: () => {},
+    changeReturnedWord: () => {},
 })
 
 export function ThemeContextProvider({children}) {
     const [darkTheme, setDarkTheme] = useState('light');
     const [fontTheme, setFontTheme] = useState('mono')
     const [word, setWord] = useState('');
+    const [resultWord, setResultWord] = useState('')
 
     const toggleTheme = () => {
         setDarkTheme(theme => theme === 'dark' ? 'light' : 'dark')
@@ -39,9 +42,12 @@ export function ThemeContextProvider({children}) {
         theme: darkTheme,
         font: fontTheme,
         searchedWord: word,
+        returnedWord: resultWord,
         changeTheme: toggleTheme,
         changeFont: pickFont,
-        changeSearchedWord: setWord
+        changeSearchedWord: setWord,
+        changeReturnedWord: setResultWord
+
     };
 
     return(
