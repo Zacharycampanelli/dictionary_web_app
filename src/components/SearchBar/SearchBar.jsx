@@ -47,9 +47,9 @@ const SearchBar = ({ emptySearch, setEmptySearch }) => {
         placeholder="Search for any word"
         onKeyDown={(e) => (e.key === 'Enter' ? changeSearch() : '')}
         onChange={(e) => setTypedWord(e.target.value)}
-        className={`bg-lightestGray ${borderClass} text-blackGray font-bold text-base rounded-2xl block w-full p-3.5 placeholder:opacity-25 md:text-xl focus:ring-lightPurple focus:caret-lightPurple  md:pl-6 cursor-pointer dark:bg-lighterBlack  dark:text-white `}
+        className={`block p-3.5 w-full  ${borderClass} rounded-2xl bg-lightestGray font-bold text-base  text-blackGray placeholder:opacity-25 focus:ring-lightPurple focus:caret-lightPurple  md:pl-6 cursor-pointer md:text-xl dark:bg-lighterBlack  dark:text-white `}
       />
-      {emptySearch && <p className="mt-2 text-brightRed text-xl">Whoops, can’t be empty…</p>}
+      {emptySearch && <p className="mt-2 text-xl text-brightRed ">Whoops, can’t be empty…</p>}
     </div>
   );
 };

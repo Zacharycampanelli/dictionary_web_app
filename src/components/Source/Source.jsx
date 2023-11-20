@@ -12,8 +12,8 @@ const Source = ({ word }) => {
     // Render the Source component with a link to the Wiktionary page and an icon for opening in a new window
     return (
         <div className='md:flex md:items-center md:mt-5 md:mb-28'>
-            <p className="text-sm text-mediumGray underline mt-6 md:mt-0 md:mr-6">Source</p>
-            <a href={url} target="_blank" rel="noreferrer" className="flex text-sm text-blackGray underline mt-1 dark:text-white">
+            <p className="mt-6 text-sm text-mediumGray underline md:mt-0 md:mr-6">Source</p>
+            <a href={url} target="_blank" rel="noreferrer" className="flex mt-1 text-sm text-blackGray underline dark:text-white">
                 {url}
                 <SvgIconNewWindow className="ml-2" /> 
             </a>

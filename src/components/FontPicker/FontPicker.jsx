@@ -37,26 +37,26 @@ const FontPicker = () => {
         label="Font Picker"
         dismissOnClick={false}
         renderTrigger={() => (
-          <button className="flex justify-between items-center text-sm font-bold dark:text-white md:text-[18px]">
+          <button className="flex justify-between items-center font-bold text-sm md:text-[18px] dark:text-white">
             {displayChosenFont()}
             <IconArrowDown className="ml-4" />
           </button>
         )}
       >
         <Dropdown.Item
-          className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent"
+          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
           onClick={() => chooseFont('sans serif')}
         >
           Sans Serif
         </Dropdown.Item>
         <Dropdown.Item
-          className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent"
+          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
           onClick={() => chooseFont('serif')}
         >
           Serif
         </Dropdown.Item>
         <Dropdown.Item
-          className="focus:bg-transparent hover:text-lightPurple hover:bg-transparent"
+          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
           onClick={() => chooseFont('mono')}
         >
           Mono

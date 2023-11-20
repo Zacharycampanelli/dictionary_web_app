@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from '@uidotdev/usehooks'; // Importing custom hook for media queries
 
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch'; // Importing ToggleSwitch component
-import FontPicker from '../FontPicker/FontPicker'; // Importing FontPicker component
 import Logo from '../../assets/images/svg/Logo'; // Importing Logo SVG component
 
 

@@ -17,7 +17,7 @@ const DisplayWord = ({ phonetic }) => {
   // Render the searched word and its phonetic representation
   return (
     <div>
-      <h1 className="mt-6 mb-1 text-[32px] text-blackGray font-bold md:text-[64px] dark:text-white md:mt-11 md:mb-0">
+      <h1 className="mt-6 mb-1 font-bold text-[32px] text-blackGray md:mt-11 md:mb-0 md:text-[64px] dark:text-white">
         {themeCtx.returnedWord}
       </h1>
       <p className="text-[18px] text-lightPurple md:text-[24px]">{phonetic}</p>

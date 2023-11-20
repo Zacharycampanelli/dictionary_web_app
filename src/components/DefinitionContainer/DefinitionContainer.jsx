@@ -93,7 +93,7 @@ const DefinitionContainer = ({ emptySearch }) => {
       {meanings.map((meaning, i) => (
         <Meaning meaning={meaning} key={i} />
       ))}
-      <div className="border-b border-lightGray border-solid w-full mt-8 dark:border-darkGray"></div>
+      <div className="w-full mt-8 border-b border-solid border-lightGray dark:border-darkGray"></div>
       {themeCtx.searchedWord && <Source word={themeCtx.searchedWord} />}
     </>
   );
