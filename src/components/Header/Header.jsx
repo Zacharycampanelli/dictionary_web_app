@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from '@uidotdev/usehooks'; // Importing custom hook for media queries
 
 import ToggleSwitch from '../ToggleSwitch/ToggleSwitch'; // Importing ToggleSwitch component
+import FontPicker from '../FontPicker/FontPicker'; // Importing FontPicker component
 import Logo from '../../assets/images/svg/Logo'; // Importing Logo SVG component
 
 
@@ -29,6 +30,7 @@ const Header = () => {
         <Logo width={logoDimensions.width} height={logoDimensions.height} />
       </div>
       <div className="options_container flex justify-around w-2/3 md:w-1/3">
+        <FontPicker />
         <hr className="w-px h-8 bg-lightGray" /> 
         <ToggleSwitch /> 
       </div>

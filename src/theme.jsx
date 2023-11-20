@@ -7,6 +7,18 @@
 
 import { useState, createContext } from "react";
 
+/**
+ * getUserPreference is a utility function that retrieves the user's color scheme preference based on their system settings.
+ * @returns {string} - The user's preferred color scheme ('light' or 'dark').
+ */
+const getUserPreference = () => {
+  // Check the user's preferred color scheme using the matchMedia API
+  let choice = window.matchMedia("(prefers-color-scheme:dark)").matches;
+  // Assign 'dark' if true, otherwise 'light'
+  let chosenTheme = choice === true ? 'dark' : 'light';
+  return chosenTheme;
+};
+
 // Creating the initial context with default values and update functions
 const ThemeContext = createContext({
   theme: '',
@@ -22,7 +34,7 @@ const ThemeContext = createContext({
 // ThemeContextProvider is a wrapper component that provides the theme-related context to its children
 export function ThemeContextProvider({ children }) {
   // States for managing dark theme, font type, searched word, and returned word
-  const [darkTheme, setDarkTheme] = useState('light');
+  const [darkTheme, setDarkTheme] = useState(getUserPreference());
   const [fontTheme, setFontTheme] = useState('mono');
   const [word, setWord] = useState('');
   const [resultWord, setResultWord] = useState('');
@@ -69,4 +81,4 @@ export function ThemeContextProvider({ children }) {
   );
 }
 
-export default ThemeContext;
+export default ThemeContext; 

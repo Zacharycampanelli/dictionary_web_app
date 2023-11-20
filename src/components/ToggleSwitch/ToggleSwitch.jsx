@@ -14,10 +14,10 @@ const ToggleSwitch = () => {
   // Render the toggle switch with a checkbox input, a styled slider, and a moon icon
   return (
     <label className="relative inline-flex items-center cursor-pointer">
-      <input type="checkbox" value="" className="sr-only peer" />
+      <input type="checkbox" defaultChecked={themeCtx.theme === 'dark' ? true : false} className="sr-only peer" />
       <div
         onClick={themeCtx.changeTheme}
-        className="w-11 h-6 bg-mediumGray rounded-full peer peer-focus:outline-none peer-checked:bg-lightPurple peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[8px] after:left-[2px] after:h-5 after:w-5 after:bg-white after:border after:rounded-full after:transition-all hover:bg-lightPurpl dark:bg-gray-700 dark:border-gray-600"
+        className="w-11 h-6 bg-mediumGray rounded-full peer peer-focus:outline-none peer-checked:bg-lightPurple peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[6px] after:left-[2px] after:h-5 after:w-5 after:bg-white after:border after:rounded-full after:transition-all hover:bg-lightPurpl lg:after:top-[8px] dark:bg-gray-700 dark:border-gray-600"
       ></div>
       <span className="ml-3 font-medium text-sm text-gray-900 dark:text-gray-300">
         <SvgIconMoon color={themeCtx.theme === 'light' ? '#757575' : '#A445ED'} />
