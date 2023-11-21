@@ -28,41 +28,41 @@ const DefinitionContainer = ({ emptySearch }) => {
   useEffect(() => {
     audio ? setDisabledButton(false) : setDisabledButton(true);
   }, [audio]);
-
-  // Function to reset component state
-  const resetState = () => {
-    themeCtx.changeSearchedWord('');
-    themeCtx.changeReturnedWord('');
-    setPhonetic('');
-    setAudio('');
-    setNotFound(true);
-  };
-
+  
   // API call for word when a search is initiated
   useEffect(() => {
     if (themeCtx.searchedWord) {
       fetch(`${url}${themeCtx.searchedWord}`)
-        .then((response) => {
-          if (response.ok) {
-            setNotFound(false);
-            themeCtx.changeReturnedWord(themeCtx.searchedWord);
-            return response.json();
-          }
-          resetState();
-          throw response;
-        })
-        .then((data) => {
-          setPhonetic(data[0].phonetic);
-          addAudioFile(data[0]);
-          let apiMeanings = data[0].meanings;
-          setMeanings([...apiMeanings]);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
+      .then((response) => {
+        if (response.ok) {
+          setNotFound(false);
+          themeCtx.changeReturnedWord(themeCtx.searchedWord);
+          return response.json();
+        }
+        resetState();
+        throw response;
+      })
+      .then((data) => {
+        setPhonetic(data[0].phonetic);
+        addAudioFile(data[0]);
+        let apiMeanings = data[0].meanings;
+        setMeanings([...apiMeanings]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
     }
   }, [themeCtx.searchedWord, setNotFound]);
-
+  
+    // Function to reset component state
+    const resetState = () => {
+      themeCtx.changeSearchedWord('');
+      themeCtx.changeReturnedWord('');
+      setPhonetic('');
+      setAudio('');
+      setNotFound(true);
+    };
+  
   // Function to add audio file to state
   const addAudioFile = (data) => {
     let i = 0;
