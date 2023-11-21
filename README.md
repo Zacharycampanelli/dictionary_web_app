@@ -31,14 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./src/assets/images/Mobile1.jpeg)
-![](./src/assets/images/Mobile2.jpeg)
-![](./src/assets/images/Tablet1.jpeg)
-![](./src/assets/images/Tablet2.jpeg)
-![](./src/assets/images/Desktop1.jpeg)
-![](./src/assets/images/Desktop2.jpeg)
-
-A
+![](./src/assets/images/screenshots/Mobile1.jpeg)
+![](./src/assets/images/screenshots/Mobile2.jpeg)
+![](./src/assets/images/screenshots/Tablet1.jpeg)
+![](./src/assets/images/screenshots/Tablet2.jpeg)
+![](./src/assets/images/screenshots/Desktop1.jpeg)
+![](./src/assets/images/screenshots/Desktop2.jpeg)
 
 ### Links
 
