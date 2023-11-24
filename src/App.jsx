@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div className={`${colorMode}`}>
       <div className={`font-${renderedFont}`}>
-        <div className="h-max h-screen p-6 bg-white md:p-10 dark:bg-darkerBlack ">
+        <div className="h-full p-6 bg-white md:p-10 dark:bg-darkerBlack ">
           <div className="lg:w-7/12 lg:m-auto">
             <Header />
             <SearchBar emptySearch={emptySearch} setEmptySearch={setEmptySearch} />
