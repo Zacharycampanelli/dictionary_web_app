@@ -3,12 +3,12 @@
  * It includes the Header, SearchBar, and DefinitionContainer components,
  * and manages the global theme and font states using the ThemeContext.
  */
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from "react";
 
-import Header from './components/Header/Header';
-import SearchBar from './components/SearchBar/SearchBar';
-import DefinitionContainer from './components/DefinitionContainer/DefinitionContainer';
-import ThemeContext from './theme';
+import Header from "./components/Header/Header";
+import SearchBar from "./components/SearchBar/SearchBar";
+import DefinitionContainer from "./components/DefinitionContainer/DefinitionContainer";
+import ThemeContext from "./theme";
 
 const App = () => {
   // Accessing the ThemeContext to get and modify theme-related information
@@ -33,10 +33,13 @@ const App = () => {
   return (
     <div className={`${colorMode}`}>
       <div className={`font-${renderedFont}`}>
-        <div className="min-h-screen p-6 bg-white md:p-10 dark:bg-darkerBlack ">
-          <div className="lg:w-7/12 lg:m-auto">
+        <div className="min-h-screen p-6 bg-white dark:bg-darkerBlack md:p-10">
+          <div className="lg:m-auto lg:w-7/12">
             <Header />
-            <SearchBar emptySearch={emptySearch} setEmptySearch={setEmptySearch} />
+            <SearchBar
+              emptySearch={emptySearch}
+              setEmptySearch={setEmptySearch}
+            />
             <DefinitionContainer emptySearch={emptySearch} />
           </div>
         </div>
@@ -45,4 +48,4 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App;

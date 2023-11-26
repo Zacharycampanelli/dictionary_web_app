@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from 'react';
-import { Button } from 'flowbite-react';
+import { useContext, useEffect, useState } from "react";
+import { Button } from "flowbite-react";
 
-import ThemeContext from '../../theme'; 
-import SvgIconSearch from '../../assets/images/svg/IconSearch';
+import ThemeContext from "../../theme";
+import SvgIconSearch from "../../assets/images/svg/IconSearch";
 
 /**
  * SearchBar component provides a search input field with a search icon and error message for empty searches.
@@ -14,20 +14,21 @@ const SearchBar = ({ emptySearch, setEmptySearch }) => {
   const themeCtx = useContext(ThemeContext);
 
   // State to manage the typed word in the search bar
-  const [typedWord, setTypedWord] = useState('');
+  const [typedWord, setTypedWord] = useState("");
 
   // State to manage the border style based on the emptySearch state
-  const [borderClass, setBorderClass] = useState('border-none');
+  const [borderClass, setBorderClass] = useState("border-none");
 
   // useEffect to update the border style based on the emptySearch state
   useEffect(() => {
-    if (emptySearch === true) setBorderClass('border-solid border-brightRed border-1');
-    else setBorderClass('border-none');
+    if (emptySearch === true)
+      setBorderClass("border-solid border-brightRed border-1");
+    else setBorderClass("border-none");
   }, [emptySearch]);
 
   // Function to handle the search, checking for an empty search and updating the theme's searched word
   const changeSearch = () => {
-    if (typedWord === '') setEmptySearch(true);
+    if (typedWord === "") setEmptySearch(true);
     else {
       setEmptySearch(false);
       themeCtx.changeSearchedWord(typedWord);
@@ -38,18 +39,24 @@ const SearchBar = ({ emptySearch, setEmptySearch }) => {
   return (
     <div className="relative mt-6">
       <div>
-        <SvgIconSearch className="absolute top-4 right-4 md:top-5 md:right-5" /> {/* Search icon */}
-        <Button className="absolute right-0 inset-y-0" onClick={() => themeCtx.changeSearchedWord(typedWord)}></Button>
+        <SvgIconSearch className="absolute right-4 top-4 md:right-5 md:top-5" />{" "}
+        {/* Search icon */}
+        <Button
+          className="absolute inset-y-0 right-0"
+          onClick={() => themeCtx.changeSearchedWord(typedWord)}
+        ></Button>
       </div>
       <input
         type="text"
         id="default-input"
         placeholder="Search for any word"
-        onKeyDown={(e) => (e.key === 'Enter' ? changeSearch() : '')}
+        onKeyDown={(e) => (e.key === "Enter" ? changeSearch() : "")}
         onChange={(e) => setTypedWord(e.target.value)}
-        className={`block p-3.5 w-full  ${borderClass} rounded-2xl bg-lightestGray font-bold text-base  text-blackGray placeholder:opacity-25 focus:ring-lightPurple focus:caret-lightPurple  md:pl-6 cursor-pointer md:text-xl dark:bg-lighterBlack  dark:text-white `}
+        className={`block w-full p-3.5  ${borderClass} cursor-pointer rounded-2xl bg-lightestGray text-base  font-bold text-blackGray placeholder:opacity-25 focus:caret-lightPurple  focus:ring-lightPurple dark:bg-lighterBlack dark:text-white md:pl-6  md:text-xl `}
       />
-      {emptySearch && <p className="mt-2 text-xl text-brightRed ">Whoops, can’t be empty…</p>}
+      {emptySearch && (
+        <p className="mt-2 text-xl text-brightRed">Whoops, can’t be empty…</p>
+      )}
     </div>
   );
 };

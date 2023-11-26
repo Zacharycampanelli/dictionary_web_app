@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 
-import ThemeContext from '../../theme';
+import ThemeContext from "../../theme";
 
 /**
  * DisplayWord component renders the searched word and its phonetic representation.
@@ -12,12 +12,12 @@ const DisplayWord = ({ phonetic }) => {
   const themeCtx = useContext(ThemeContext);
 
   // If no word has been searched, return an empty string (component will not render)
-  if (themeCtx.searchedWord === '') return '';
+  if (themeCtx.searchedWord === "") return "";
 
   // Render the searched word and its phonetic representation
   return (
     <div>
-      <h1 className="mt-6 mb-1 font-bold text-[32px] text-blackGray md:mt-11 md:mb-0 md:text-[64px] dark:text-white">
+      <h1 className="mb-1 mt-6 text-[32px] font-bold text-blackGray dark:text-white md:mb-0 md:mt-11 md:text-[64px]">
         {themeCtx.returnedWord}
       </h1>
       <p className="text-[18px] text-lightPurple md:text-[24px]">{phonetic}</p>

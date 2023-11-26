@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { Dropdown } from 'flowbite-react';
+import { useContext } from "react";
+import { Dropdown } from "flowbite-react";
 
-import ThemeContext from '../../theme'; 
-import IconArrowDown from '../../assets/images/svg/IconArrowDown';
-import { capitalize } from '../../utils/capitalize';
+import ThemeContext from "../../theme";
+import IconArrowDown from "../../assets/images/svg/IconArrowDown";
+import { capitalize } from "../../utils/capitalize";
 
 /**
  * FontPicker component is a dropdown menu that allows users to choose different font styles.
@@ -22,7 +22,7 @@ const FontPicker = () => {
   const displayChosenFont = () => {
     let temp;
     // If the font is 'sans', display 'sans serif'; otherwise, capitalize and display the font
-    if (themeCtx.font === 'sans') temp = 'sans serif';
+    if (themeCtx.font === "sans") temp = "sans serif";
     else temp = themeCtx.font;
     temp = capitalize(temp);
 
@@ -37,27 +37,27 @@ const FontPicker = () => {
         label="Font Picker"
         dismissOnClick={false}
         renderTrigger={() => (
-          <button className="flex justify-between items-center font-bold text-sm md:text-[18px] dark:text-white">
+          <button className="flex items-center justify-between text-sm font-bold dark:text-white md:text-[18px]">
             {displayChosenFont()}
             <IconArrowDown className="ml-4" />
           </button>
         )}
       >
         <Dropdown.Item
-          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
-          onClick={() => chooseFont('sans serif')}
+          className="hover:bg-transparent hover:text-lightPurple focus:bg-transparent"
+          onClick={() => chooseFont("sans serif")}
         >
           Sans Serif
         </Dropdown.Item>
         <Dropdown.Item
-          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
-          onClick={() => chooseFont('serif')}
+          className="hover:bg-transparent hover:text-lightPurple focus:bg-transparent"
+          onClick={() => chooseFont("serif")}
         >
           Serif
         </Dropdown.Item>
         <Dropdown.Item
-          className="focus:bg-transparent hover:bg-transparent hover:text-lightPurple"
-          onClick={() => chooseFont('mono')}
+          className="hover:bg-transparent hover:text-lightPurple focus:bg-transparent"
+          onClick={() => chooseFont("mono")}
         >
           Mono
         </Dropdown.Item>
